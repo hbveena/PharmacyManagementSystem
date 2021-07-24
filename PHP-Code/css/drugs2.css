@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+/*#wrapper {
+    padding-left: 200px;
+    
+  }*/
+/*#div1{
+  background-color:rgb(81, 81, 221);
+height:90px;
+background: repeating-linear-gradient(-45deg,rgb(81, 81, 221),#333 1px,#000 1px);
+
+}*/
+#us{
+  width:30px;
+  height:20px;
+  background-color: black;
+}
+#div1{
+    /*display:inline;*/
+
+    /* padding-left: 1110px; */
+    
+      height:40px;
+     /* background-color:rgba(128,128,128,0.6);  */
+      /* background-color:rgba(28, 160, 244,0.4);  */
+    margin-left:250px;
+    /* border-style:groove; */
+
+}
+#change{
+    color:black;
+    display:block;
+    font-size: 40px;
+    font-weight: bold; 
+    cursor:default;
+}
+#sidebar-wrapper {
+    position: absolute;
+    width: 250px;
+   /* border-radius: 50px;*/
+    /* background-color:rgba(128,128,128,0.6); */
+    /* background-color:#1ca0f4;  */
+    /* border-style:outset; */
+    /* background-color:rgba(28, 160, 244,0.4);  */
+    
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1000;
+    /* background: repeating-linear-gradient(-45deg,rgba(28, 160, 244,0.4),#333 1px,black 1px); */
+    /* background-image: url("medicines.jpg"); */
+  }
+/*h1{
+    cursor:auto;
+    color:whitesmoke;
+    position: absolute;
+    top: 6%;
+    left: 2%;
+    font-size: 40px;
+    font-style: italic;
+    display:inline;
+}
+
+
+#duser{
+    
+   cursor:pointer;
+    position: absolute;
+    right:3%;
+    top: 17px;
+   
+}*/
+#div1 a{
+  display:block;
+  display:inline;
+  position: absolute;
+color:black;
+
+font-size: 16px;
+font-weight:bold;
+}
+#div1 a:hover{
+  color:white;
+  
+}
+
+.nav-list li{
+line-height:40px;
+text-indent:20px;
+}
+.nav-list li a{
+text-decoration:none;
+color:black;
+display:block;
+font-size: 17px;
+font-weight: bold;
+
+
+
+}
+/* .nav-list li a span{
+    padding:16px;
+    
+  background-color: black;
+  border-color: black;
+  border-radius: 40px;
+} */
+.nav-list li a:hover{
+    color:white;
+    text-decoration:none;
+}
+.nav-list{
+
+list-style:none;
+position: absolute;
+  top: 0;
+  width: 250px;
+}
+body{
+    /* background-color:whitesmoke; */
+    background-image:  url("img/medicines2.jpeg");
+    background-size: cover;
+    /* background: repeat; */
+   /* position:fixed; */
+}
+.nav-list li a:active,
+.nav-list li a:focus {
+  text-decoration: none;
+}
+
+#wrapper {
+  
+    padding-left: 0;
+  }
+  
+  #sidebar-wrapper {
+      top:0px;
+    left: 0;
+  }
+  
+  #wrapper.active {
+    position: relative;
+    left: 250px;
+  }
+  
+  
+  
+

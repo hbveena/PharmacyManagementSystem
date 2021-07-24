@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pharmacare-Login</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="icon" href="img/favicon1.jpg" type="image/jpg" size="50px">
+        <style>
+            input[type="radio"]{
+                margin: 0 10px 0 10px; 
+            }
+            body{
+                    padding-top:0px;
+                    background:url("img/login1.jpg");
+                    background-size: cover;
+                }
+                .card {
+  
+                    margin-left: 650px;
+                }
+                .w-25 {
+                    width: 38% !important;
+                }
+                .btn-primary {
+                     background-color:rgb(4, 67, 162);
+                     border-color: #0443a2;
+                }
+                .btn-primary:hover {
+  
+                    background-color:#0443a2 ;
+                }
+                .bg-primary {
+  background-color: rgb(4, 63, 128) !important;
+}
+                .card-body {
+                    background-color: rgb(4, 63, 128,0.1);
+                    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+                }
+                .card-header{
+                    box-shadow: 0 0 20px rgba(0,0,0,1.5);
+                }
+                #title{
+  color:white;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+  text-align: left;
+  font-style: oblique;
+  font-size: 45px;
+                }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container vh-100">
+            
+            <div class="row justify-content-center h-100">
+               
+                
+                <div class="card w-25 my-auto shadow"  style="display:flex;">
+                    <label style="color:white;font-size:37px;text-align:center;font-style: oblique;font-weight:bold;background-color:rgb(4, 63, 128);">PharmaCare</label>
+                    
+                    <div class="card-header text-center bg-primary text-white">
+                        
+                        <h2>Login</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="login.php" method="post">
+                            <div class="form-group">
+                                <label for="email">
+                                    Email
+                                </label>
+                                <input type="email" id="email" class="form-control" name="email" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">
+                                    Password
+                                </label>
+                                <input type="password" id="password" class="form-control" name="password" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="role">
+                                    Role
+                                </label><br>
+                                <input type="radio" name="role" id="adtext" value="Pharmacist">Pharmacist
+                                <input type="radio" name="role" id="adtext" value="Salesman">Salesman
+                            </div>
+                            <input type="submit" class="btn btn-primary w-100"><br><br>
+                            <div class="form-group">
+                                <p>New Employee ?</p>
+                                <a href="register.php">Register</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </body>
+</html>

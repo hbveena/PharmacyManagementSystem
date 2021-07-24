@@ -1,0 +1,135 @@
+TABLE CREATION 
+
+Drugs Table 
+CREATE TABLE DRUGS ( 
+ drugcode varchar(6), 
+ drugname varchar(25) not null, 
+ constraint pkd1 primary key(drugcode)); 
+
+Category Table 
+ CREATE TABLE CATEGORY ( 
+ categoryid int auto_increment, 
+ categoryname varchar(12) not null, 
+ constraint pkd2 primary key (categoryid)); 
+
+Drugsinfo Table 
+ CREATE TABLE DRUGSINFO ( 
+ drugcode varchar(6), 
+ categoryid int, 
+ expirydate date not null, 
+ mfgdate date not null, 
+ mrp decimal(7,2) not null, 
+ constraint pkd3 primary key (drugcode,categoryid), 
+ constraint fkd3 foreign key (categoryid) references category(categoryid), 
+ constraint fkdd3 foreign key (drugcode) references drugs(drugcode)); 
+
+Roles Table 
+CREATE TABLE ROLES ( 
+ role varchar(15), 
+ salary decimal(7,2) not null, 
+ constraint pkst2 primary key(role)); 
+
+Staff Table 
+CREATE TABLE STAFF ( 
+ sid int auto_increment, 
+ name varchar(30) not null, 
+ role varchar(15) not null, 
+ phone bigint(10) not null, 
+ joiningdate date not null, 
+ password varchar(10) , 
+ email varchar(25) not null, 
+ gender char(1) not null, 
+ dob date not null,
+ street varchar(60) not null, 
+ city varchar(30) not null, 
+ state varchar(30) not null, 
+ constraint pkst1 primary key(sid), 
+ constraint fkst2 foreign key (role) references roles(role)); 
+
+Address Table 
+CREATE TABLE ADDRESS ( 
+ street varchar(60), 
+ city varchar(30), 
+ state varchar(30), 
+ pincode bigint(6) not null, 
+ constraint pkaa primary key(street,city,state), 
+ constraint fkaa1 foreign key(street) references staff(street) on update cascade, 
+ constraint fkaa2 foreign key(city) references staff(city) on update cascade, 
+ constraint fkaa3 foreign key(state) references staff(state) on update cascade); 
+
+Company1 Table 
+ CREATE TABLE COMPANY1 ( 
+ cid varchar(4), 
+ companyname varchar(40) not null, 
+ constraint pkc1 primary key (cid)); 
+
+Company2 Table 
+CREATE TABLE COMPANY2 ( 
+ cid varchar(4), 
+ branch varchar(15), 
+ sales_executive varchar(30) not null, 
+ email varchar(40) not null, 
+ sid int not null, 
+ phone bigint(10) not null, 
+ constraint pkc2 primary key(cid,branch), 
+ constraint fkc2 foreign key(sid) references staff(sid), 
+ constraint fkc3 foreign key(cid) references company1(cid)); 
+
+Customer Table 
+CREATE TABLE CUSTOMER( 
+ custid varchar(7), 
+ custname varchar(30) not null, 
+ phone bigint(10), 
+ constraint pkc primary key(custid)); 
+ 
+Purchase Table 
+CREATE TABLE PURCHASE ( 
+ drugcode varchar(6), 
+ categoryid int, 
+ cid varchar(4), 
+ branch varchar(15), 
+ purchasedate date not null, 
+ buyingprice decimal(7,2) not null, 
+ quantity int not null, 
+ constraint pkp primary key(drugcode,cid,categoryid,branch,purchasedate), 
+ constraint fkp foreign key (drugcode) references drugs(drugcode), 
+ constraint fkpp foreign key (categoryid) references category(categoryid), 
+constraint fkppp foreign key(cid) references company1(cid), 
+ constraint fkpppp foreign key(branch) references company2(branch)); 
+
+Sales1 Table 
+CREATE TABLE SALES1 ( 
+ invoiceno int, 
+ invoicedate date not null, 
+ constraint pkse1 primary key(invoiceno)); 
+
+Sales2 Table 
+CREATE TABLE SALES2 ( 
+ invoiceno int, 
+ sid int, 
+ constraint pkse2 primary key(invoiceno,sid), 
+ constraint fkse2 foreign key (invoiceno) references sales1(invoiceno), 
+ constraint fksse2 foreign key (sid) references staff(sid)); 
+
+Sales3 Table 
+CREATE TABLE SALES3 ( 
+ invoiceno int, 
+ drugcode varchar(6), 
+ categoryid int, 
+ custid varchar(7), 
+ quantity int not null, 
+ totalprice decimal(7,2), 
+ constraint pkse3 primary key(drugcode,invoiceno,categoryid,custid), 
+ constraint fkse3 foreign key (drugcode) references drugs(drugcode), 
+ constraint fksse3 foreign key (categoryid) references category(categoryid), 
+ constraint fkssee3 foreign key (custid) references customer(custid), 
+ constraint fksee3 foreign key(invoiceno) references sales1(invoiceno)); 
+
+Stock Table 
+CREATE TABLE STOCK ( 
+ drugcode varchar(6), 
+ categoryid int, 
+ quantity int,
+ constraint pks primary key(drugcode,categoryid), 
+ constraint fks foreign key (categoryid) references category(categoryid), 
+ constraint fkss foreign key (drugcode) references drugs(drugcode)); 

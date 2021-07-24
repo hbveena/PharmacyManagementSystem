@@ -1,0 +1,26 @@
+TRIGGER 
+
+Trigger to increase the stock when new drugs purchased from a company 
+CREATE DEFINER=`root`@`localhost` TRIGGER `purchase_AFTER_INSERT` 
+AFTER INSERT ON `purchase` FOR EACH ROW BEGIN 
+UPDATE `pharmacy`.`stock` SET `quantity`=new.`quantity`+`quantity` WHERE 
+`drugcode`=new.`drugcode` AND `categoryid`=new.`categoryid`; 
+END 
+
+Trigger to decrease the stock when drugs sold to the customer 
+CREATE DEFINER=`root`@`localhost` TRIGGER `sales3_AFTER_INSERT` 
+AFTER INSERT ON `sales3` FOR EACH ROW BEGIN 
+UPDATE `pharmacy`.`stock` SET `quantity`=`quantity`-new.`quantity` WHERE 
+`drugcode`=new.`drugcode` AND `categoryid`=new.`categoryid`; 
+END 
+
+
+STORED PROCEDURE 
+
+Stored procedure to check whether the required quantity of drugs available before selling. 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `checkavailability`(IN 
+drugcode_input varchar(6),IN categoryid_input int) 
+BEGIN 
+select quantity from pharmacy.stock where drugcode=drugcode_input and 
+categoryid=categoryid_input; 
+END

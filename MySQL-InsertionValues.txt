@@ -1,0 +1,92 @@
+INSERTION OF VALUES 
+
+INSERT INTO DRUGS (Drugcode,Drugname) VALUES (‘DC0001’,’Propofol’); 
+INSERT INTO DRUGS (Drugcode,Drugname) VALUES (‘DC0002’,’Diazepam’); 
+INSERT INTO DRUGS (Drugcode,Drugname) VALUES (‘DC0003’,’Paracetamol’); 
+
+INSERT INTO CATEGORY (Categoryid,Categoryname) VALUES (1,’Injection’); 
+INSERT INTO CATEGORY (Categoryid,Categoryname) VALUES (2,’Tablets’); 
+INSERT INTO CATEGORY (Categoryid,Categoryname) VALUES (3,’Syrup’); 
+
+INSERT INTO DRUGSINFO (Drugcode,Categoryid,Expirydate,Mfgdate,Mrp) 
+VALUES (‘DC0001’,1, 2021-11-30, 2020-06-17,200); 
+INSERT INTO DRUGSINFO (Drugcode,Categoryid,Expirydate,Mfgdate,Mrp) 
+VALUES (‘DC0002’,3, 2021-11-10, 2020-06-14,22.11); 
+INSERT INTO DRUGSINFO (Drugcode,Categoryid,Expirydate,Mfgdate,Mrp) 
+VALUES (‘DC0003’,1, 2021-10-02, 2020-02-09,28); 
+
+INSERT INTO ROLES (Role,Salary) VALUES (‘Pharmacist’,35000); 
+INSERT INTO ROLES (Role,Salary) VALUES (‘Salesman’,25000); 
+
+INSERT INTO STAFF 
+(Sid,Name,Role,Phone,Joiningdate,Password,Email,Gender,Dob,Street,City,State) 
+VALUES (1,’Virat’,’Pharmacist’,9925643482,2018-04-
+05,’virat123’,’virat@gmail.com’,’M’,’1996-04-18’,’#34,10th main,5th cross,jayanagar 3rd
+block’,’bamgalore’,’karnataka’); 
+INSERT INTO STAFF 
+(Sid,Name,Role,Phone,Joiningdate,Password,Email,Gender,Dob,Street,City,State) 
+VALUES (2,’Sumith’,’Pharmacist’,9920011482,2018-04-
+08,’sumith123’,’sumith@gmail.com’,’M’,’1995-04-11’,’#14,5th main,6th cross,BSK 2nd
+stage’,’bamgalore’,’karnataka’); 
+INSERT INTO STAFF 
+(Sid,Name,Role,Phone,Joiningdate,Password,Email,Gender,Dob,Street,City,State) 
+VALUES (3,’Vishnu’,’Salesman’,8825643482,2018-04-
+08,’vishnu123’,’vishnu@gmail.com’,’M’,’1996-04-18’,’#3,1st main,5th cross,jayanagar 
+3rd block’,’bamgalore’,’karnataka’); 
+
+INSERT INTO ADDRESS (Street,City,State,Pincode) VALUES (’#34,10th main,5th
+cross,jayanagar 3rd block’,’bamgalore’,’karnataka’,560011); 
+INSERT INTO ADDRESS (Street,City,State,Pincode) VALUES (’#14,5th main,6th
+cross,BSK 2nd stage’,’bamgalore’,’karnataka’,560050); 
+INSERT INTO ADDRESS (Street,City,State,Pincode) VALUES (’#3,1st main,5th
+cross,jayanagar 3rd block’,’bamgalore’,’karnataka’,560011); 
+
+INSERT INTO COMPANY1 (Cid,Companyname) VALUES (‘C001’,’CAD Pharma 
+Inc’); 
+INSERT INTO COMPANY1 (Cid,Companyname) VALUES (‘C002’,’Parithosh 
+Pharma’); 
+INSERT INTO COMPANY1 (Cid,Companyname) VALUES (‘C003’,’GTT Pharma 
+Company’); 
+
+INSERT INTO COMPANY2 (Cid,Branch,Sales_executive,Email,Phone,Sid) VALUES 
+(‘C001’,’Bangalore’,’Ramesh’,’cad@gmail.com’,9525911553,1); 
+INSERT INTO COMPANY2 (Cid,Branch,Sales_executive,Email,Phone,Sid) VALUES 
+(‘C002’,’Hyderabad’,’Aman’,’parithoshpharma@gmail.com’,8525911553,2); 
+INSERT INTO COMPANY2 (Cid,Branch,Sales_executive,Email,Phone,Sid) VALUES 
+(‘C003’,’Bangalore’,’Kapil’,’gttpharma@gmail.com’,803411553,3); 
+
+INSERT INTO CUSTOMER (Custid,Custname,Phone) VALUES 
+(‘CT00001’,’Krishna’,9045578125); 
+INSERT INTO CUSTOMER (Custid,Custname,Phone) VALUES 
+(‘CT00002’,’Veena’,8077278126); 
+INSERT INTO CUSTOMER (Custid,Custname,Phone) VALUES 
+(‘CT00003’,’Krishna’,7122378123); 
+
+INSERT INTO PURCHASE 
+(Drugcode,Categoryid,Cid,Branch,Purchasedate,Buyingprice,Quantity) VALUES 
+(‘DC0001’,1,’C001’,’Bangalore’,2021-01-02,190,30); 
+INSERT INTO PURCHASE 
+(Drugcode,Categoryid,Cid,Branch,Purchasedate,Buyingprice,Quantity) VALUES 
+(‘DC0002’,3,’C001’,’Bangalore’,2021-01-02,19,30); 
+INSERT INTO PURCHASE 
+(Drugcode,Categoryid,Cid,Branch,Purchasedate,Buyingprice,Quantity) VALUES 
+(‘DC0003’,1,’C001’,’Bangalore’,2021-01-02,20,30); 
+
+INSERT INTO SALES1 (Invoiceno,Invoicedate) VALUES (1783451,2021-01-03); 
+INSERT INTO SALES1 (Invoiceno,Invoicedate) VALUES (1783452,2021-01-03); 
+INSERT INTO SALES1 (Invoiceno,Invoicedate) VALUES (1783453,2021-01-03); 
+
+INSERT INTO SALES2 (Invoiceno,Sid) VALUES (1783451,2); 
+INSERT INTO SALES2 (Invoiceno,Sid) VALUES (1783452,3); 
+INSERT INTO SALES2 (Invoiceno,Sid) VALUES (1783453,1); 
+
+INSERT INTO SALES3 (Invoiceno,Drugcode,Categoryid,Custid,Quantity,Totalprice) 
+VALUES(1783451,’DC0001’,1,’CT00001’,2,200.45); 
+INSERT INTO SALES3 (Invoiceno,Drugcode,Categoryid,Custid,Quantity,Totalprice) 
+VALUES(1783452,’DC0002’,3,’CT00002’,10,250.13); 
+INSERT INTO SALES3 (Invoiceno,Drugcode,Categoryid,Custid,Quantity,Totalprice) 
+VALUES(1783453,’DC0003’,1,’CT00003’,22,180.45); 
+
+INSERT INTO STOCK (Drugcode,Categoryid,Quantity) VALUES (‘DC0001’,1,40); 
+INSERT INTO STOCK (Drugcode,Categoryid,Quantity) VALUES (‘DC0002’,3,50); 
+INSERT INTO STOCK (Drugcode,Categoryid,Quantity) VALUES (‘DC0003’,1,20); 
